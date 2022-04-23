@@ -25,7 +25,6 @@ The three microservices that best divide the monolith are the ones described abo
 The database, from the prespective of each service has the following models:
 * **User**:
   * users: user accounts and information
-  * tokens: user authentication tokens
   * favourite categories: favourite category as chosen by the user
 * **Order**:
   * carts: shopping cart details, user_id, items, total, status, etc.
@@ -36,6 +35,7 @@ The database, from the prespective of each service has the following models:
   * suppliers: supplier information, name, address, etc.
 
 <!-- insert access diagram 1 (db objects in services) -->
+
 ### Actors
 The actors in the scenario are the following:
 - **Customer**: the user of the application, can register, login, view catalogue, and place orders (create carts and confirm orders). It can also pick a favourite category to display in profile.
@@ -52,6 +52,9 @@ The specific internal communications are as follows:
 
 <!-- add roles -->
 ## Authors
-+ Tooraj Taraz ([@ToorajTaraz](https://github.com/ToorajTaraz))
+<!-- + Tooraj Taraz ([@ToorajTaraz](https://github.com/ToorajTaraz))
 + Hamed Ghoochanian ([@HamedGhoochanian](https://github.com/HamedGhoochanian))
-+ Afarin Zamanian ([@Af4rinz](https://github.com/Af4rinz))
++ Afarin Zamanian ([@Af4rinz](https://github.com/Af4rinz)) -->
+
+| [<img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/64916254?v=4" width="75px;"/><br/>Tooraj Taraz](https://github.com/ToorajTaraz) (Team Lead) <br/>user - auth | [<img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/67141954?v=4" width="75px;"/><br/>Hamed Ghoochanian](https://github.com/HamedGhoochanian)<br/>catalogue - order| [<img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/23293389?v=4" width="75px;" /><br/>Afarin Zamanian](https://github.com/Af4rinz)<br/>design & doc|
+| :---: | :---: | :---: |
