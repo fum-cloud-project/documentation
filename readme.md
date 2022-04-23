@@ -35,6 +35,10 @@ The database, from the prespective of each service has the following models:
   * suppliers: supplier information, name, address, etc.
 
 <!-- insert access diagram 1 (db objects in services) -->
+| ![access diagram 1](https://github.com/fum-cloud-project/documentation/blob/main/access_diagram_1.png) |
+|:--:|
+|*Access diagram 1*|
+
 
 ### Actors
 The actors in the scenario are the following:
@@ -42,6 +46,10 @@ The actors in the scenario are the following:
 - **Admin**: the administrator of the application, can add, update, delete products and categories, manage users, and view orders.
 
 <!-- insert access diagram 2 (user-service and service-service interactions) -->
+| ![access diagram 2](https://github.com/fum-cloud-project/documentation/blob/main/access_diagram_2.png) |
+|:--:|
+|*Access diagram 2*|
+
 ### Internal Communication
 The specific internal communications are as follows:
 * `user — catalog`: getting category information for favourite categroy selection
