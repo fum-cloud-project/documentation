@@ -1,4 +1,4 @@
-# Cloud Computing Project - Phase 1
+# Cloud Computing Project
 This documentation describes a microservice architecture for [JPetStore](https://github.com/mybatis/jpetstore-6) project and plans to implement it in a cloud environment.
 
 ## Overview
