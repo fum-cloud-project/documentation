@@ -15,7 +15,7 @@ In the following sections, a three-part architecture is proposed that will divid
 
 ## Proposed Design
 ### Microservices
-The three microservices that best divide the monolith are the ones described above, as they are already somewhat well-defined. Other reasons for splitting the monolith into these three services are:
+The three microservices that best divide the monolith are the ones described above (_auth, catalogue,_ and _order_), as they are already somewhat well-defined. Other reasons for splitting the monolith into these three services are:
 1. The user authentication system only interacts with the rest of the application through the order mechanism.
 2. The catalogue is mostly static and is updated either by admin to update or add new products or through the order system to update the stock.
 3. The order system is the most dynamic and is updated frequently through purchases and cart management.
@@ -23,9 +23,9 @@ The three microservices that best divide the monolith are the ones described abo
 
 ### Database Structure
 The database, from the prespective of each service has the following models:
-* **User**:
+* **Auth**:
   * users: user accounts and information
-  * favourite categories: favourite category as chosen by the user
+  * resources: resource access control
 * **Order**:
   * carts: shopping cart details, user_id, items, total, status, etc.
   * orders: order details (i.e. finalized carts with purchase information)
@@ -33,6 +33,7 @@ The database, from the prespective of each service has the following models:
   * categories: categories and subcategories, include parent_id for hierarchy
   * products: product details, category_id, stock, price, etc.
   * suppliers: supplier information, name, address, etc.
+  * favourite categories: each user's favourite categories
 
 <!-- insert access diagram 1 (db objects in services) -->
 | ![access diagram 1](https://github.com/fum-cloud-project/documentation/blob/main/access_diagram_1.png) |
@@ -52,10 +53,10 @@ The actors in the scenario are the following:
 
 ### Internal Communication
 The specific internal communications are as follows:
-* `user — catalog`: getting category information for favourite categroy selection
-* `user — order`: validate auth token
+* `auth — order`: validating auth token
 * `order — catalog`: getting product information
-* `catalog — order`: update product stock
+* `catalog — order`: updating product stock
+* for each operation, the services also verify the JWT token and access control levels through a gRPC call to the auth service. This means there are `auth — order` and `auth — catalog` calls.
 
 
 <!-- add roles -->
